@@ -1,7 +1,7 @@
 package com.train.shop.mapper;
 
-import com.shop.pojo.User;
-import com.shop.pojo.UserExample;
+import com.train.shop.pojo.User;
+import com.train.shop.pojo.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
