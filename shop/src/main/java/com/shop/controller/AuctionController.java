@@ -23,7 +23,7 @@ import java.util.List;
 @Controller
 public class AuctionController {
     // 每页记录数
-    private static final  int PAGE_SIZE = 5;
+    private static final  int PAGE_SIZE = 10;
 
     @Autowired
     private AuctionService auctionService;

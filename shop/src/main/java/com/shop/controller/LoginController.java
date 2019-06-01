@@ -18,9 +18,8 @@ public class LoginController {
 
     // 跳转显示出登录界面
     @RequestMapping(value = "/login")
-    public String login()
-    {
-       return "login";
+    public String login() {
+        return "login";
     }
 
 
@@ -30,48 +29,46 @@ public class LoginController {
                              String userPassword,
                              String valideCode,
                              HttpSession session,
-                             Model model)
-    {
-     // 校验验证码
-
+                             Model model) {
+        // 校验验证码
         String randomCode = (String) session.getAttribute("vrifyCode");
-
-        if(!valideCode.equals(randomCode))
-        {
+        if (!valideCode.equals(randomCode)) {
             //验证码不正确
-          model.addAttribute("errorMsg","傻逼验证码不正确");
-
+            model.addAttribute("errorMsg", "验证码不正确");
             return "login";
         }
-
 
         List<User> userList = this.userService.isLogin(username, userPassword);
-        if(userList!=null&&userList.size()>0)
-        {
-
-
+        if (userList != null && userList.size() > 0) {
             // 查询到了账号和密码
             User user = userList.get(0);
-
             // 将用户对象存入session域中
-            session.setAttribute("user",user);
+            session.setAttribute("user", user);
             // return "index";
             return "redirect:/queryAllAuctions";
-        }
-        else
-        {
-            model.addAttribute("errorMsg","账号或密码不正确");
+        } else {
+            model.addAttribute("errorMsg", "账号或密码不正确");
             return "login";
         }
-
     }
-
 
 
     // 跳转到注册页面
     @RequestMapping(value = "/toregesiter")
-    public String toregesiter()
-    {
-     return "regesiter";
+    public String toregesiter() {
+        return "regesiter";
+    }
+
+    //注销跳转至登录页面
+    @RequestMapping(value = "logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "login";
+    }
+
+    //欢迎页为登录
+    @RequestMapping(value = "/")
+    public String tologin(){
+        return "login";
     }
 }
