@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.shop.mapper.UserMapper;
-import com.shop.pojo.User;
-import com.shop.pojo.UserExample;
-import com.shop.pojo.UserExample.Criteria;
+import com.train.shop.mapper.UserMapper;
+import com.train.shop.pojo.User;
+import com.train.shop.pojo.UserExample;
+import com.train.shop.pojo.UserExample.Criteria;
 
 
 @Service

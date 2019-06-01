@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.shop.mapper.UserMapper;
-import com.shop.pojo.User;
-import com.shop.service.UserService;
+import com.train.shop.mapper.UserMapper;
+import com.train.shop.pojo.User;
+import com.train.shop.service.UserService;
 
 @Controller
 public class RegesiterController {

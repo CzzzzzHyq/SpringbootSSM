@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.shop.mapper.AuctionCustomerMapper;
-import com.shop.mapper.AuctionMapper;
-import com.shop.mapper.AuctionrecordMapper;
-import com.shop.pojo.Auction;
-import com.shop.pojo.AuctionCustomer;
-import com.shop.pojo.AuctionExample;
-import com.shop.pojo.AuctionExample.Criteria;
-import com.shop.pojo.Auctionrecord;
-import com.shop.tools.CustomerException;
+import com.train.shop.mapper.AuctionCustomerMapper;
+import com.train.shop.mapper.AuctionMapper;
+import com.train.shop.mapper.AuctionrecordMapper;
+import com.train.shop.pojo.Auction;
+import com.train.shop.pojo.AuctionCustomer;
+import com.train.shop.pojo.AuctionExample;
+import com.train.shop.pojo.AuctionExample.Criteria;
+import com.train.shop.pojo.Auctionrecord;
+import com.train.shop.tools.CustomerException;
 
 @Service
 @Transactional

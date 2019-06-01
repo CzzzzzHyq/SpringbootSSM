@@ -1,7 +1,7 @@
 package com.train.shop.mapper;
 
-import com.shop.pojo.Auctionrecord;
-import com.shop.pojo.AuctionrecordExample;
+import com.train.shop.pojo.Auctionrecord;
+import com.train.shop.pojo.AuctionrecordExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

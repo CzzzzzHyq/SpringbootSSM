@@ -10,8 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.shop.pojo.User;
-import com.shop.service.UserService;
+import com.train.shop.pojo.User;
+import com.train.shop.service.UserService;
 
 @Controller
 public class LoginController {

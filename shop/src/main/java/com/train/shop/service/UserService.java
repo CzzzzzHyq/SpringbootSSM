@@ -2,7 +2,7 @@ package com.train.shop.service;
 
 import java.util.List;
 
-import com.shop.pojo.User;
+import com.train.shop.pojo.User;
 
 public interface UserService {
  // User isLogin(String username,String userPassword);
