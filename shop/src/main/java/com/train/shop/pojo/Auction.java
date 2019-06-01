@@ -2,6 +2,7 @@ package com.train.shop.pojo;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class Auction {
     private Integer auctionid;
@@ -21,8 +22,19 @@ public class Auction {
     private String auctionpictype;
 
     private String auctiondesc;
+    
+    // 表示一对多关系
+    private List<Auctionrecord> auctionrecodList;
 
-    public Integer getAuctionid() {
+    public List<Auctionrecord> getAuctionrecodList() {
+		return auctionrecodList;
+	}
+
+	public void setAuctionrecodList(List<Auctionrecord> auctionrecodList) {
+		this.auctionrecodList = auctionrecodList;
+	}
+
+	public Integer getAuctionid() {
         return auctionid;
     }
 
