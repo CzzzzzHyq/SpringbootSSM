@@ -3,8 +3,6 @@ package com.train.shop.mapper;
 import com.train.shop.pojo.Auction;
 import com.train.shop.pojo.AuctionExample;
 import java.util.List;
-
-import com.train.shop.pojo.AuctionExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface AuctionMapper {
