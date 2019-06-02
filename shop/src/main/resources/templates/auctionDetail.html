@@ -31,13 +31,13 @@
       <ul class="rows">
         <li>开始时间：</li>
         <li class="borderno">
-         <span th:text="${#dates.format(auctionDetail.auctionstarttime,'yyyy-MM-dd hh:mm:ss')}"></span>
+         <span th:text="${#dates.format(auctionDetail.auctionstarttime,'yyyy-MM-dd HH:mm:ss')}"></span>
         </li>
       </ul>
       <ul class="rows">
         <li>结束时间：</li>
         <li class="borderno">
-         <span th:text="${#dates.format(auctionDetail.auctionendtime,'yyyy-MM-dd hh:mm:ss')}"></span>
+         <span th:text="${#dates.format(auctionDetail.auctionendtime,'yyyy-MM-dd HH:mm:ss')}"></span>
        </li>
       </ul>
       <ul class="rows border-no">
@@ -78,7 +78,7 @@
     	  th:if="${not #lists.isEmpty(auctionDetail.auctionrecodList)}"
     	  th:each="auctionRecord:${auctionDetail.auctionrecodList}">
     	  
-       <li th:text="${#dates.format(auctionRecord.auctiontime,'yyyy-MM-dd hh:MM:ss')}"></li>
+       <li th:text="${#dates.format(auctionRecord.auctiontime,'yyyy-MM-dd HH:mm:ss')}"></li>
        <li th:text="${auctionRecord.auctionprice}"></li>
        <li class="borderno" th:text="${auctionRecord.user.username}"></li>
        

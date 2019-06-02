@@ -26,12 +26,12 @@
 
       <label for="time">开始时间</label>
       <input name="auctionstarttime"
-             th:value="${#dates.format(condition.auctionstarttime,'yyyy-MM-dd hh:mm:ss')}"
+             th:value="${#dates.format(condition.auctionstarttime,'yyyy-MM-dd HH:mm:ss')}"
              type="text" id="time" class="nwinput" readonly="readonly" onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
 
       <label for="end-time">结束时间</label>
       <input name="auctionendtime"
-             th:value="${#dates.format(condition.auctionendtime,'yyyy-MM-dd hh:mm:ss')}"
+             th:value="${#dates.format(condition.auctionendtime,'yyyy-MM-dd HH:mm:ss')}"
              type="text" id="end-time" class="nwinput" readonly="readonly" onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
 
       <label for="price">起拍价</label>
@@ -60,13 +60,13 @@
       <ul th:each="auction,state:${auctionList}" th:class="${state.odd?'rows':'rows even'}">
         <li th:text="${auction.auctionname}"></li>
         <li class="list-wd" th:text="${auction.auctiondesc}"></li>
-        <li th:text="${#dates.format(auction.auctionstarttime,'yyyy-MM-dd hh:mm:ss')}"></li>
-        <li th:text="${#dates.format(auction.auctionendtime,'yyyy-MM-dd hh:mm:ss')}"></li>
+        <li th:text="${#dates.format(auction.auctionstarttime,'yyyy-MM-dd HH:mm:ss')}"></li>
+        <li th:text="${#dates.format(auction.auctionendtime,'yyyy-MM-dd HH:mm:ss')}"></li>
         <li th:text="${auction.auctionstartprice}"></li>
         <li class="borderno red">
           <span th:if="${session.user.userisadmin==1}">
              <!--<a th:href="'/UpdateAuction?auctionid='+${auction.auctionid}">修改</a>|-->
-             <a th:href="'/ToUpdateAuction?auctionid='+${auction.auctionid}">修改</a>|
+             <a th:href="'/ToUpdateAuction?auctionid='+${auction.auctionid}">修改</a> |
              <a th:href="'/DeleteAuction/'+${auction.auctionid}">删除</a>
           </span>
 
@@ -83,7 +83,7 @@
       <div class="page">
         当前第<span th:text="${page.pageNum}"></span>页,
         总共<span th:text="${page.pages}"></span>页,
-        总记录<span th:text="${page.total}"></span>数
+        总记录<span th:text="${page.total}"></span>条
         <a href="#" title="" th:onclick="'javascript:jumpPage(1)'">首页</a>
         <a href="#" title="" th:onclick="'javascript:jumpPage('+${page.prePage}+')'">上一页</a>
         <a href="#" title="" th:onclick="'javascript:jumpPage('+${page.nextPage}+')'">下一页</a>

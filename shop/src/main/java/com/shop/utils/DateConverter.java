@@ -12,7 +12,7 @@ public class DateConverter implements Converter<String, Date> {
 
 	@Override
 	public Date convert(String time) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		try {
 			return sdf.parse(time);
 		} catch (ParseException e) {
@@ -20,5 +20,4 @@ public class DateConverter implements Converter<String, Date> {
 		}
 		return null;
 	}
-
 }

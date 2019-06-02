@@ -29,8 +29,8 @@
 			</ul> 
 			<ul th:each="auction,state:${endtimeList}" th:class="${state.odd}?'rows':'rows even'">
 				<li th:text="${auction.auctionname}"></li>
-				<li th:text="${#dates.format(auction.auctionstarttime,'yyyy-MM-dd hh:mm:ss')}"></li>
-				<li th:text="${#dates.format(auction.auctionendtime,'yyyy-MM-dd hh:mm:ss')}"></li>
+				<li th:text="${#dates.format(auction.auctionstarttime,'yyyy-MM-dd HH:mm:ss')}"></li>
+				<li th:text="${#dates.format(auction.auctionendtime,'yyyy-MM-dd HH:mm:ss')}"></li>
 				<li th:text="${auction.auctionstartprice}"></li>
 				<li class="list-wd" th:text="${auction.auctionprice}"></li>
 				<li class="borderno red" th:text="${auction.username}"></li>
@@ -53,8 +53,8 @@
 			</ul>
 			<ul th:each="auctionDetail,state:${noendtimeList}" th:class="${state.odd}?'rows':'rows even'">
 				<li th:text="${auctionDetail.auctionname}"></li>
-				<li th:text="${#dates.format(auctionDetail.auctionstarttime,'yyyy-MM-dd hh:mm:ss')}"></li>
-				<li th:text="${#dates.format(auctionDetail.auctionendtime,'yyyy-MM-dd hh:mm:ss')}"></li>
+				<li th:text="${#dates.format(auctionDetail.auctionstarttime,'yyyy-MM-dd HH:mm:ss')}"></li>
+				<li th:text="${#dates.format(auctionDetail.auctionendtime,'yyyy-MM-dd HH:mm:ss')}"></li>
 				<li th:text="${auctionDetail.auctionstartprice}"></li>
 				
 				<li class="borderno blue record">

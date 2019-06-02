@@ -180,7 +180,6 @@ public class AuctionController {
         // 封装图片的名称
         auction.setAuctionpic(pic.getOriginalFilename());
 
-
         File file = new File("E:\\pic\\"+pic.getOriginalFilename());
         // 上传
         pic.transferTo(file);
