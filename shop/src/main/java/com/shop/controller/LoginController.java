@@ -62,6 +62,7 @@ public class LoginController {
     //注销跳转至登录页面
     @RequestMapping(value = "logout")
     public String logout(HttpSession session){
+        //清空session
         session.invalidate();
         return "login";
     }
