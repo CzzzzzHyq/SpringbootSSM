@@ -76,7 +76,7 @@ public class AuctionController {
         Auction auctionDetail = this.auctionService.selectAuctionAndAuctionRecordList(auctionid);
 
 
-        System.out.println("auctionDetail-------------------------"+auctionDetail);
+        //System.out.println("auctionDetail-------------------------"+auctionDetail);
 
 
       modelAndView.addObject("auctionDetail",auctionDetail);

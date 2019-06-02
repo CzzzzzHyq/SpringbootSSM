@@ -94,12 +94,14 @@
         </dd>
         <dd>
           <label>开始时间：</label>
-          <input type="text" name="auctionstarttime" class="inputh lf"  onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
+          <input type="text" name="auctionstarttime" class="inputh lf"  th:value="${#dates.format(auction.auctionstarttime,'yyyy-MM-dd HH:mm:ss')}"
+                 onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
           <div id="startTimeid" class="lf red laba">格式：2019-06-05 12:30:00</div>
         </dd>
         <dd>
           <label>结束时间：</label>
-          <input type="text" name="auctionendtime" class="inputh lf"  onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
+          <input type="text" name="auctionendtime" class="inputh lf" th:value="${#dates.format(auction.auctionendtime,'yyyy-MM-dd HH:mm:ss')}"
+                 onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
           <div id="endTimeid" class="lf red laba">格式：2019-06-06 16:30:00</div>
         </dd>
         <dd class="dds">
@@ -114,7 +116,7 @@
         </dd>
         <dd class="dds">
           <label>描述：</label>
-          <textarea name="auctiondesc" cols="" rows="" class="textarea" th:value="${auction.auctiondesc}"></textarea>
+          <textarea name="auctiondesc" cols="" rows="" class="textarea" th:value="${auction.auctiondesc}" th:text="${auction.auctiondesc}"></textarea>
         </dd>
         <dd class="hegas">
           <input type="submit" value="确定修改" class="spbg buttombg buttombgs buttomb f14 lf" />
