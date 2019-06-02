@@ -8,16 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RegesiterController {
+
     @Autowired
     private UserService userService;
+
     @RequestMapping(value = "/regesiterUser")
-    public String regesiterUser(User user)
-    {
-        // 设置只能注册普通用户
+    public String regesiterUser(User user) {
         user.setUserisadmin(0);
-
         this.userService.regesiterUser(user);
-
         return "redirect:/login";
     }
 }

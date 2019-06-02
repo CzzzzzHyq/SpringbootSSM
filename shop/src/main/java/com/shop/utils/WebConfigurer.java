@@ -22,6 +22,6 @@ public class WebConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/login", "/doLogin" , "/logout" ,"/toregesiter", "/css/**" ,"/js/**" ,"/images/**" ,"/defaultKaptcha");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/login", "/doLogin" , "/logout" ,"regesiterUser", "/toregesiter", "/css/**" ,"/js/**" ,"/images/**" ,"/defaultKaptcha");
     }
 }

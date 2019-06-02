@@ -18,8 +18,6 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
     @Override
     public List<User> isLogin(String username, String userPassword) {
-
-
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
         criteria.andUsernameEqualTo(username);
