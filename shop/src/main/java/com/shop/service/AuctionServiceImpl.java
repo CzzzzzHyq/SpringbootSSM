@@ -167,10 +167,21 @@ public class AuctionServiceImpl implements AuctionService {
 
     @Override
     public void addAuction(Auction auction) {
-
-
-
         this.auctionMapper.insert(auction);
+    }
 
+    @Override
+    public int deleteAuction(Integer Auctionid) {
+        return this.auctionMapper.deleteByPrimaryKey(Auctionid);
+    }
+
+    @Override
+    public Auction selectByPrimaryKey(Integer Auctionid) {
+        return this.auctionMapper.selectByPrimaryKey(Auctionid);
+    }
+
+    @Override
+    public int updateByPrimaryKey(Auction auction) {
+        return this.auctionMapper.updateByPrimaryKey(auction);
     }
 }

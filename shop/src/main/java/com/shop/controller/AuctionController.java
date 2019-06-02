@@ -8,10 +8,8 @@ import com.shop.pojo.User;
 import com.shop.service.AuctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -151,5 +149,48 @@ public class AuctionController {
        this.auctionService.addAuction(auction);
 
        return "redirect:/queryAllAuctions";
+    }
+
+    //删除拍卖品
+    @RequestMapping(value = "DeleteAuction/{auctionid}")
+    public String DeleteAuction(@PathVariable Integer auctionid){
+        int row=this.auctionService.deleteAuction(auctionid);
+        if (row>0){
+            return "redirect:/queryAllAuctions";
+        }
+        else {
+            return "redirect:/queryAllAuctions";
+        }
+    }
+
+    //跳转更新拍卖品页面
+    @RequestMapping(value = "ToUpdateAuction")
+    public String ToUpdateAuction(Integer auctionid,Model model){
+        model.addAttribute("auctionid",auctionid);
+        Auction auction=auctionService.selectByPrimaryKey(auctionid);
+        model.addAttribute("auction",auction);
+        return "updateAuction";
+    }
+
+    //更新拍卖品
+    @RequestMapping(value = "updateAuction")
+    public String updateAuction(Auction auction,MultipartFile pic) throws Exception{
+        // 封装 图片的类型
+        auction.setAuctionpictype(pic.getContentType());
+        // 封装图片的名称
+        auction.setAuctionpic(pic.getOriginalFilename());
+
+
+        File file = new File("E:\\pic\\"+pic.getOriginalFilename());
+        // 上传
+        pic.transferTo(file);
+        System.out.println(auction.toString());
+        int row=auctionService.updateByPrimaryKey(auction);
+        if (row>0){
+            return "redirect:/queryAllAuctions";
+        }
+        else {
+            return "redirect:/queryAllAuctions";
+        }
     }
 }

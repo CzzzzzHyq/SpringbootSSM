@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>在线拍卖系统</title>
 <link href="css/common.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
   <script src="js/WebCalendar.js" type="text/javascript"></script>
@@ -65,8 +65,9 @@
         <li th:text="${auction.auctionstartprice}"></li>
         <li class="borderno red">
           <span th:if="${session.user.userisadmin==1}">
-             <a href="#" title="" onclick="dele();">修改</a>|
-             <a href="#" title="" onclick="abc();">删除</a>
+             <!--<a th:href="'/UpdateAuction?auctionid='+${auction.auctionid}">修改</a>|-->
+             <a th:href="'/ToUpdateAuction?auctionid='+${auction.auctionid}">修改</a>|
+             <a th:href="'/DeleteAuction/'+${auction.auctionid}">删除</a>
           </span>
 
           <span th:if="${session.user.userisadmin==0}">
@@ -101,8 +102,6 @@
 
 
      }
-
-
   </script>
 <!-- main end-->
 </div>
