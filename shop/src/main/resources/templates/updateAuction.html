@@ -66,7 +66,7 @@
 </head>
 
 <body>
-<form action="/updateAuction" enctype="multipart/form-data" method="get" autocomplete="off">
+<form action="/updateAuction" enctype="multipart/form-data" method="post" autocomplete="off">
   <div class="wrap">
     <!-- main begin-->
     <div class="sale">
@@ -94,14 +94,12 @@
         </dd>
         <dd>
           <label>开始时间：</label>
-          <input type="text" name="auctionstarttime" class="inputh lf" th:value="${auction.auctionstarttime}"
-                 onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
+          <input type="text" name="auctionstarttime" class="inputh lf"  onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
           <div id="startTimeid" class="lf red laba">格式：2019-06-05 12:30:00</div>
         </dd>
         <dd>
           <label>结束时间：</label>
-          <input type="text" name="auctionendtime" class="inputh lf" th:value="${auction.auctionendtime}"
-                 onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
+          <input type="text" name="auctionendtime" class="inputh lf"  onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
           <div id="endTimeid" class="lf red laba">格式：2019-06-06 16:30:00</div>
         </dd>
         <dd class="dds">
@@ -112,8 +110,7 @@
             </div>
           </div>
           <input id="imageInput" onchange="loadImageFile();" name="pic" type="file" class="offset10 lf" />
-          <div id="picid" class="lf red laba">&nbsp;&nbsp;&nbsp; 请上传图片</div><br>
-          <!--<button type="button" onclick="notupdatepic()">不更换照片</button>-->
+          <div id="picid" class="lf red laba">请上传图片</div>
         </dd>
         <dd class="dds">
           <label>描述：</label>
@@ -126,14 +123,5 @@
     </div>
   </div>
 </form>
-<!--
-<script th:inline="javascript">
-  function notupdatepic() {
-    //alert([[${auction.auctionpic}]]);
-    $("#imageInput").val([[${auction.auctionpic}]]);
-    return;
-  }
-</script>
--->
 </body>
 </html>
